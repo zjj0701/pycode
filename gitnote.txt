@@ -1,0 +1,5 @@
+从暂存区拿回去git restore --staged filemame
+版本回退 git reset有两个一个是soft一个是hard
+
+暂存工作去区域和暂存区代码 git stash 取出git stash pop
+分支合并先要切换到总分支再合并其他的分支
