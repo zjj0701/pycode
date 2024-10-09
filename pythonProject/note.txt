@@ -1,0 +1,7 @@
+卷积神经网络：解决了不变性；捕捉图像的局部特征而不受位置的影响
+https://blog.csdn.net/AI_dataloads/article/details/133250229
+FaceNet:https://www.cnblogs.com/wcjb/p/16256141.html
+池化：https://www.cnblogs.com/emanlee/p/17578597.html
+L2标准化：
+L2标准化通过将向量中每个元素除以向量的欧几里得范数（即L2范数），使得归一化后的向量的平方和为1。
+FPN：特征金字塔网络
