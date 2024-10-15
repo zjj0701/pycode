@@ -43,7 +43,7 @@ class TwoLayerNet:
         y = self.predict(x)
         y = np.argmax(y, axis=1)
         if t.ndim != 1: t = np.argmax(t, axis=1)
-
+        # np.sum(y == t) 会统计预测正确的样本数量。样本数/总样本数
         accuracy = np.sum(y == t) / float(x.shape[0])
         return accuracy
 
