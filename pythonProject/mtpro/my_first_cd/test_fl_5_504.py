@@ -1,7 +1,7 @@
 # 读入数据
 import numpy as np
 from pythonProject.mtpro.my_first_cd.ch01.mnist import load_mnist
-from pythonProject.mtpro.my_first_cd.test_fl_203 import TwoLayerNet
+from pythonProject.mtpro.my_first_cd.TwoLayerNet import TwoLayerNet
 
 (x_train, t_train), (x_test, t_test) = load_mnist(normalize=True, one_hot_label=True)
 
