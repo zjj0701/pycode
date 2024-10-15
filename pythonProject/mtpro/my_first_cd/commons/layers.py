@@ -56,15 +56,19 @@ class Affine:
         x = x.reshape(x.shape[0], -1)
         self.x = x
 
+        # 计算仿射变换: W * x + b
         out = np.dot(self.x, self.W) + self.b
 
         return out
 
     def backward(self, dout):
+        # 在这个地方，self.W.T是对W进行转置，计算公式假定是wx+b，计算x的梯度
         dx = np.dot(dout, self.W.T)
+        # 计算W的梯度，上一层的梯度dout*L对w的梯度，就是(x.T)
         self.dW = np.dot(self.x.T, dout)
+        # 计算b的梯度，上层的梯度dout*L对b的梯度(在这里就是1)
         self.db = np.sum(dout, axis=0)
-
+        # 在反向传播结束时，需要恢复输入的原始形状，以确保后续层可以正确地接收梯度并继续计算。
         dx = dx.reshape(*self.original_x_shape)  # 还原输入数据的形状（对应张量）
         return dx
 
