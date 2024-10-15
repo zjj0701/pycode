@@ -32,6 +32,12 @@ def numerical_gradient_2d(f, X):
 
 
 def numerical_gradient(f, x):
+    '''
+    (fxh1 - fxh2) / (2*h)
+    :param f:
+    :param x:
+    :return:
+    '''
     h = 1e-4 # 0.0001
     grad = np.zeros_like(x)
     
