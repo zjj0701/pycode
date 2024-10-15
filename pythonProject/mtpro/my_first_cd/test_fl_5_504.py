@@ -18,6 +18,7 @@ test_acc_list = []
 
 iter_per_epoch = max(train_size / batch_size, 1)
 
+j = 0
 for i in range(iters_num):
     batch_mask = np.random.choice(train_size, batch_size)
     x_batch = x_train[batch_mask]
@@ -31,12 +32,14 @@ for i in range(iters_num):
     for key in ('W1', 'b1', 'W2', 'b2'):
         network.params[key] -= learning_rate * grad[key]
 
+    # 计算损失函数
     loss = network.loss(x_batch, t_batch)
     train_loss_list.append(loss)
 
     if i % iter_per_epoch == 0:
+        j += 1
         train_acc = network.accuracy(x_train, t_train)
         test_acc = network.accuracy(x_test, t_test)
         train_acc_list.append(train_acc)
         test_acc_list.append(test_acc)
-        print(train_acc, test_acc)
+        print(f"第{j}批次的精度是：{train_acc}, {test_acc}")
