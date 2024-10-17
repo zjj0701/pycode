@@ -109,7 +109,7 @@ class Dropout:
 
     def forward(self, x, train_flg=True):
         if train_flg:
-            self.mask = np.random.rand(*x.shape) > self.dropout_ratio
+            self.mask = np.random.rand(*x.shape) > self.dropout_ratio #Dropout 的比例，表示在训练时丢弃多少神经元（例如0.5表示丢弃50%的神经元）。
             return x * self.mask
         else:
             return x * (1.0 - self.dropout_ratio)
