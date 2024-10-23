@@ -1,5 +1,3 @@
-from os import write
-
 import torch.optim
 import torchvision
 from torch import nn
