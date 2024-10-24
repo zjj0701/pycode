@@ -50,3 +50,7 @@ c = {**a, **b}
 print(c)
 d = a | b
 print(d)
+
+
+a = True and 10 or 100
+print(a)
